@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>REST</title>
+
+		<meta name="author" content="Cyril Lacôte">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/custom.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>REST</h1>
+				</section>
+
+				<section>
+					<h2>Cyril Lacôte</h2>
+					<br/>
+					<h4>Ninja Squad</h4>
+					<h4>@clacote</h4>
+				</section>
+		
+				<section>
+					<h1>REST</h1>
+				</section>
+
+				<section>
+					<h2>REpresentational State Transfer</h2>
+				</section>
+
+				<section>
+					<h2>2000 - Roy Fielding</h2>
+				</section>
+				<section>
+					<h2>REST c'est quoi?</h2>
+					<ul>
+						<li>C’est un style d’architecture</li>
+						<li>Ce n’est pas un standard</li>
+						<li>C’est une alternative à SOAP</li>
+					</ul>
+				</section>
+				<section>
+				<h2>REST utilise les standards existants</h2>
+					<ul>
+						<li>HTTP</li>
+						<li>URIs/URLs</li>
+						<li>XML, HTML, PNG, JSON...</li>
+						<li>application/xml, text/html, image/png, ... (types MIME)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Stateless</h2>
+					horizontal scalability
+
+				</section>
+
+				<section>
+					<h2>JSON or XML</h2>
+
+					But JSON is obviously THE FUTURE!
+				</section>
+
+				<section>
+					<pre><code class="JSON">
+{
+  "name": "Cyril Lacôte",
+  "company": "Ninja Squad",
+  "email": "cyril@ninja-squad.com",
+  "twitter": "@clacote",
+  "associations" : ["LyonJUG", "Mix-IT"]
+}
+					</code></pre>
+
+					<h3>Everybody familiar </h3>
+					<h3>with Json?</h3>
+				</section>
+
+				<section>
+					<h2>Respect du web</h2>
+				</section>
+
+				<section>
+					<h2>URI</h2>
+					<code>http://server.com/users/clacote</code>
+				</section>
+
+				<section>
+					<h2>HTTP verb</h2>
+					<code>GET</code><br/>
+					<code>POST</code><br/>
+					<code>PUT</code><br/>
+					<code>DELETE</code><br/>
+				</section>
+
+				<section>
+					<strike><code>getAllUsers</code></strike><br/>
+
+					<code>GET /users</code><br/>
+				</section>
+
+				<section>
+					<strike><code>getUserById(id)</code></strike><br/>
+
+					<code>GET /users/{id}</code><br/>
+				</section>
+
+				<section>
+					<strike><code>createUser</code></strike><br/>
+
+					<code>POST /users</code><br/>
+				</section>
+
+				<section>
+					<strike><code>deleteUser(id)</code></strike><br/>
+
+					<code>DELETE /users/{id}</code><br/>
+				</section>
+
+				<section>
+					<strike><code>updateUser</code></strike><br/>
+
+					<code>PUT /users/{id}</code><br/>
+				</section>
+
+				<section>
+					<strike><code>searchUser(criteria)</code></strike><br/>
+
+					<code>GET /users/search?name=Lac*&age=34</code><br/>
+				</section>
+
+				<section>
+					<h2>Code http</h2>
+					<h4>3 cas courants</h4>
+					<h4>OK, erreur client, erreur serveur</h4>
+				</section>
+
+				<section>
+					<h2>OK</h2>
+				</section>
+
+				<section>
+					<img src="http://farm8.staticflickr.com/7153/6512628175_05188fffdf_o.jpg"></img>
+				</section>
+
+				<section>
+					<h2>Bad request</h2>
+				</section>
+
+				<section>
+					<img src="http://farm8.staticflickr.com/7022/6540669737_efcd99ea88_o.jpg"></img>
+				</section>
+
+				<section>
+					<h2>Internal Server Error</h2>
+				</section>
+
+				<section>
+					<img src="http://farm8.staticflickr.com/7001/6509400855_f36a7fea54_o.jpg"></img>
+				</section>
+
+				<section>
+					<h2>Created</h2>
+				</section>
+
+				<section>
+					<img src="http://farm8.staticflickr.com/7149/6540221577_a8a555ce53_o.jpg"></img>
+				</section>
+
+				<section>
+					<h2>Not Found</h2>
+				</section>
+				
+				<section>
+					<img src="http://farm8.staticflickr.com/7172/6508022985_b7862b580a_o.jpg"></img>
+				</section>
+				
+				<section>
+					<h2>Reponse</h2>
+				</section>
+
+				<section>
+					<h2>HTTP status 403</h2>
+					<pre><code  class="JSON">
+{
+	"code": "14",
+	"developerMessage": "this user has not enough credentials to access admin repository",
+	"more": "http://mywebsite.com/api/errors/14",
+	"userMessage": "You can't access this repository",
+}
+					</code></pre>
+				</section>
+				<section>
+					<h2>Content type negociation</h2>
+					<h4>application/JSON</h4>
+					<h4>application/xml</h4>
+				</section>
+
+				<section>
+					<h2>HATEOAS</h2>
+					<h4>Hypermedia as the Engine</h4>
+					<h4>of Application State</h4>
+				</section>
+
+				<section>
+					<h2>Demo</h2>
+					<h3><a href="https://apigee.com/console/github">github</a></h3>
+				</section>
+
+				<section>
+					<h3>Pragmatist</h3>
+					<h4> vs </h4>
+					<h3>RESTafarian</h3>
+				</section>
+
+				<section>
+					<h2>Api sub domain</h2>
+					<h4>http://api.github.com</h4>
+				</section>
+
+				<section>
+					<h2>Verbs are bad</h2>
+					<h2>Nouns are good</h2>
+				</section>
+
+				<section>
+					<h3>concrete nouns</h3>
+					<h3>lower case</h3>
+					<h3>plural (as in collections)</h3>
+				</section>
+
+				<section>
+					<h2>Attributs names</h2>
+					<h4>"created_at": Twitter, Github</h4>
+					<h4>"createdAt": Foursquare</h4>
+				</section>
+
+				<section>
+					<h2>Versioning</h2>
+					<h4>/v1/users</h4>
+				</section>
+
+				<section>
+					<h2>Pagination</h2>
+					<h4>/users?limit=120</h4>
+					<h4>/users?page=2&count=30</h4>
+					<h4>/users?fields=name,email</h4>
+				</section>
+
+				<section>
+					<h1>How to</h1>
+					<h2>with Spring MVC</h2>
+				</section>
+
+				<section>
+					<h2>A controller</h2>
+
+					<pre><code class="java">
+
+@Controller
+@RequestMapping("/spectacle")
+public class SpectacleController {
+
+  @Autowired
+  private SpectacleService spectacleService;
+
+  @RequestMapping(value="/{id}", method=RequestMethod.GET)
+  public ModelAndView view(@PathVariable("id") Long id) {
+    Spectacle spectacle = spectacleService.findById(id);
+    ModelAndView result = new ModelAndView("spectacle");
+    result.addObject("spectacle", spectacle);
+    return result;
+  }
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Been there,</h3>
+					<h3>Done that.</h3>
+					<br/>
+					<h2>So what about</h2>
+					<h2>JSON handling?</h2>
+				</section>
+
+				<section>
+					<h2>JSON needs</h2>
+					<ul>
+						<li>Check <code>ACCEPT_TYPE</code> header (if we're nice)</li>
+						<li>Read JSON input (if we need to)</li>
+						<li>Write JSON ouput.</li>
+					</ul>
+				</section>
+
+				<section>
+					You're lucky to use Spring MVC&nbsp;:
+					<h2>Add <em>Jackson</em> to your <code>CLASSPATH</code></h2>
+					<h3>and... that's it!</h3>
+
+					<textarea cols="50" rows="5">
+<dependency>
+    <groupId>org.codehaus.jackson</groupId>
+    <artifactId>jackson-mapper-asl</artifactId>
+    <version>1.9.12</version>
+</dependency>
+					</textarea>
+				</section>
+
+				<section>
+					<h2>Jackson?</h2>
+					A JSON marshaller. <em>THE</em> JSON marshaller.<br/>
+					<small>(other famous one: Gson)</small>
+				</section>
+
+				<section>
+					<h2>Write Json?</h2>
+					<h3>Jackson API</h3>
+					
+					<pre><code class="java">
+ObjectMapper mapper = new ObjectMapper();
+mapper.writeValue(writer, javaObject);
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h3>Through Spring MVC:</h3>
+					<code>@ResponseBody</code> on return type<br/>
+					If request <code>accept "application/json"</code>
+
+					<pre><code class="java">
+@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+public @ResponseBody Spectacle view(@PathVariable("id") Long id) {
+    Spectacle spectacle = spectacleService.findById(id);
+    return spectacle;
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>One gotcha</h2>
+					Default Json mapping: 
+					all fields serialized.
+					<p>
+						<strong>Avoid cyclic references!</strong>
+					</p>
+				</section>
+
+				<section>
+					<h2>How to customize Json serialization?</h2>
+					<p>
+						Lot of ways (check <a href="http://wiki.fasterxml.com/JacksonHome" title="Jackson documentation">documentation</a>).<br/>
+						Easiest: annotate your model classes.
+						<ul>
+							<li><code>@JsonIgnore</code> to ignore attribute</li>
+							<li><code>@JsonProperty("otherName")</code> to customize name</li>
+							<li>... and many more.
+						</ul>
+					</p>
+				</section>
+
+
+				<section>
+					<h2>Read Json?</h2>
+					<h3>Jackson API</h3>
+					
+					<pre><code class="java">
+ObjectMapper mapper = new ObjectMapper();
+User user = mapper.readValue(json, User.class);
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h3>Through Spring MVC:</h3>
+					<code>@RequestBody</code> on action method parameter<br/>
+					If request <code>content-type "application/json"</code>
+
+					<pre><code class="java">
+@RequestMapping(value = "/", method = RequestMethod.POST)
+public void Spectacle create(@RequestBody Spectacle spectacle) {
+    spectacleService.createSpectacle(spectacle);
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Handling errors?</h2>
+					<h3>and return dedicated HTTP error status?</h3>
+				</section>
+				
+				<section>
+					<ul>
+						<li>Define your own exception class</li>
+						<li><code>@ExceptionHandler</code> (in same controller class)</li>
+					</ul>
+
+					<pre><code class="java">
+@ExceptionHandler(InvalidRequestException.class)
+@ResponseStatus(HttpStatus.BAD_REQUEST)
+public @ResponseBody String whenInvalidRequest() {
+    return "invalid data";
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>And now, for your coding pleasure</h2>
+<pre>
+GET /api/spectacles/ : liste des spectacles<br/>
+GET /api/spectacles/{id} : détail du spectacle d'identifiant {id}<br/>
+POST /api/spectacles/ : créer un nouveau spectacle
+  avec gestion d'erreurs (paramètre manquant -> erreur HTTP 400)
+</pre>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>
